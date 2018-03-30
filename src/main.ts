@@ -1,11 +1,12 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import 'rxjs/Rx'; // For using methods on observables
+
+import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import {PokesirModule} from "./app/pokesir.module";
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(PokesirModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
